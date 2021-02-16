@@ -1,48 +1,31 @@
 ---
-title: Understanding the Gatsby lifecycle with Narative
-author: Thiago Costa, Dennis Brotzky, Brad Tiller, Mack Mansouri
-date: 2019-04-31
-hero: ./images/hero-2.jpg
-excerpt: With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+title: Noty before building a product
+author: Thiago Costa
+date: 2019-04-30
+hero: ./images/hero-6.jpg
+excerpt: this is my excerpt
 ---
 
 Hello, world! This is a demo post for `gatsby-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
 
-In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere. In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere. In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
+In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
+In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
+In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
+In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 
-<div class="Image__Small">
-  <img src="./images/small.jpg" alt="alt text for small image" />
-</div>
+But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
+
+Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
 
 These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
 
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-<div class="Image__Medium">
-  <img src="./images/medium.jpg" alt="alt text for medium image" />
-</div>
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves? But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-<div class="Image__Large">
-  <img src="./images/large.jpg" alt="alt text for large image" />
-</div>
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-## This is a secondary heading
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
-
-```js {5-6}
+```js
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import styled from "@emotion/styled";
 
-import SocialIcons from "@icons";
+import * as SocialIcons from "../../icons/social";
 import mediaqueries from "@styles/media";
 
 const icons = {
@@ -53,6 +36,23 @@ const icons = {
   instagram: SocialIcons.InstagramIcon,
   github: SocialIcons.GithubIcon,
 };
+
+const socialQuery = graphql`
+  {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            social {
+              name
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 function SocialLinks({ fill = "#73737D" }: { fill: string }) {
   const result = useStaticQuery(socialQuery);
@@ -81,106 +81,74 @@ function SocialLinks({ fill = "#73737D" }: { fill: string }) {
 }
 ```
 
-At Narative, we’ve been fans of Gatsby from day one, using it to build performant and flexible products for both clients and ourselves. With the growing community interest in Gatsby, we hope to create more resources that make it easier for anyone to grasp the power of this incredible tool.
+But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
 
-One of the challenges I had when learning Gatsby was trying to understand the Gatsby lifecycle. React introduced me to the concept of a Component Lifecycle, but when I started learning Gatsby I felt at a loss again. I remember looking through example repositories and seeing Gatsby specific files in every project and thinking to myself, “What are these files for? Why are gatsby-node.js, gatsby-browser.js, and gatsby-ssr.js generated in the default starter kit? Can I really delete these files?”
+# This is a primary heading
 
-## How does Gatsby work?
+Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
 
-To understand what these files are for, we must first understand how Gatsby works. Gatsby is a static site generator that pulls data from sources you provide and generates a website/app for you.
+> Blockquotes are very handy in email to emulate reply text.
+> This line is part of the same quote.
 
-Gatsby requires Node to be installed to run the Bootstrap and Build sequences. Under the hood, Gatsby uses Webpack to build and start a development server amongst other things.
+But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
 
-### Step 1
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
-During the Bootstrap sequence, which occurs every time you run \$ gatsby develop, there are about 20 events that fire ranging from validating your gatsby-config.js to building the data schemas and pages for your site. For example, the Bootstrap sequence is where Gatsby will create pages. If you want an in depth look of all 20 Bootstrap steps Swyx shared a fantastic Gist that goes into more detail.
+These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
 
-### Step 2
+## This is a secondary heading
 
-The Build sequence is very similar to the Bootstrap sequence, except it’s run with production optimizations and will output static files ready for deployment. Think of it as building your React application in production mode vs development.
+```jsx
+import React from "react";
+import { ThemeProvider } from "theme-ui";
+import theme from "./theme";
 
-### Step 3
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+);
+```
 
-And finally, once the generated files are deployed, Gatsby lives in the browser. Gatsby cleverly generates a static website that turns into a web app after initial load, which extends the lifecycle to the browser.
-
-What’s important to remember is that Gatsby’s lifecycle can be aggregated into 3 main sequences:
-
-- Bootstrap
-- Build
-- Browser
-- These three sequences makeup the Gatsby lifecycle.
+These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
 
 ---
 
-## What are the Gatsby specific files for?
+Hyphens
 
-gatsby-config.js
-A place to put all your site configurations such as plugins, metadata, and polyfills. This file is the blueprint of your application and is where Gatsby really shines with its plugin system. When you run $ gatsby develop or $ gatsby build gatsby-config.js is the first file to be read and validated.
+---
 
-Most of your time spent in gatsby-config.js will likely revolve around source plugins, image plugins, offline support, styling options, and site metadata.
+Asterisks
 
-```jsx
-function MDX({ content, children, ...props }) {
-  const [colorMode] = useColorMode();
+---
 
-  return (
-    <MDXProvider components={components}>
-      <MDXBody>
-        <MDXRenderer isDark={colorMode === "dark"} {...props}>
-          {content}
-        </MDXRenderer>
-        {children}
-      </MDXBody>
-    </MDXProvider>
-  );
-}
-```
+Underscores
 
-### gatsby-node.js
+These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
 
-Gatsby runs a Node process when you develop or build your website and uses Webpack under the hood to spin up a development server with hot reloading. During the Node process Gatsby will load plugins, check the cache, bootstrap the website, build the data schema, create pages, and deal with some configuration and data management.
+Do they have the resources necessary to execute on their ideas? Or are they constantly under pressure to pluck only the lowest-hanging fruit through bare minimum means, while putting their greatest ambitions on the back-burner?
 
-Everything that occurs during the Bootstrap and Build sequences occurs in gatsby-node.js. This means it’s the perfect place to create pages dynamically based off data from a source plugin or modify Gatsby’s Webpack or Babel configs.
+Emphasis, aka italics, with _asterisks_ or _underscores_.
 
-For example, if you want to move some files manually, such as a Netlify \_redirects file, a good place to do it is in your gatsby-node.js file at the onPostBuild lifecycle hook.
+Strong emphasis, aka bold, with **asterisks** or **underscores**.
 
-From experience, most of my time has revolved around handling data and building pages in gatsby-node.js. This file quickly becomes the piping of your entire website.
+Combined emphasis with **asterisks and _underscores_**.
 
-### Examples of gatsby-node.js hooks:
+Strikethrough uses two tildes. ~~Scratch this.~~
 
-- createPages
-- onCreateBabelConfig
-- onCreateWebpackConfig
-- onPostBuild
-- gatsby-ssr.js
+1. First ordered list item
+2. Another item
+   ⋅⋅\* Unordered sub-list.
+3. Actual numbers don't matter, just that it's a number
+   ⋅⋅1. Ordered sub-list
+4. And another item.
 
-When you think Server Side Rendering you think of a server that takes in requests and dynamically builds pages and sends it to the client. Gatsby doesn’t do that, but it does server side render — it generates all the pages during build time.
+⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 
-Naturally, gatsby-ssr.js allows developers to hook into that lifecycle. In my experience, most use cases revolve around injecting CSS, HTML, or Redux state information into the generated output. For example, if you need to insert third party scripts such as Analytics Tracking or a Pixel it can be done on the onRenderBody gatsby-ssr.js hook.
+⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
+⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
+⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
-### Examples of gatsby-ssr.js hooks:
+- Unordered list can use asterisks
 
-- onPreRenderHTML
-- onRenderBody
-- replaceRenderer
-- gatsby-browser.js
+* Or minuses
 
-Gatsby is a static site that loads a dynamic application after initial load, which means you get the benefits of a static site in a web application. gatsby-browser.js provides convenient hooks to deal with app loading, route updates, service worker updates, scroll positioning, and more.
-
-Everything that occurs after your static site has loaded can be hooked in gatsby-browser.js. For apps that I’ve built, gatsby-browser.js was mostly used for keeping track of routes, scroll positioning, and sending analytics events.
-
-### Examples of gatsby-browser.js hooks:
-
-- onClientEntry
-- onRouteUpdate
-- onServiceWorkerInstalled
-- registerServiceWorker
-- shouldUpdateScroll
-
-## Conclusion
-
-Gatsby is built with React at its core and shares a common API pattern, the lifecycle. This lifecycle gives developers access to key moments in their website’s process through specific hooks. For example, adding analytics can be achieved through the Browser lifecycle hook onClientEntry. Gatsby reserves specific filenames as an entry point to access every lifecycle; these files are named gatsby-node.js, gatsby-ssr.js and gatsby-browser.js.
-
-Without the Gatsby lifecycle, it would be impossible to customize and modify your project beyond the base configuration, leaving developers with a rigid and poor developer experience. This power and flexibility has helped us build amazing web projects for clients like Hopper!
-
-Gatsby is a staple within our engineering process at Narative, helping us help our clients build the products they’ve always dreamed of, and the ones they’re yet to dream up.
+- Or pluses
