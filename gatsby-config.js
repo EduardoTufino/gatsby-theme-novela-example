@@ -35,12 +35,14 @@ module.exports = {
     {
       resolve: "@narative/gatsby-theme-novela",
       options: {
+        name: "images",
+        path: "${__dirname}/content/",
         contentPosts: "content/posts",
         contentAuthors: "content/authors",
         basePath: "/",
         sources: {
           local: true,
-          contentful: false
+          //contentful: false
         },
       },
     },
