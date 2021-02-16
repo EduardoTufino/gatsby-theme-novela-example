@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Eduardo`,
     name: `Narative`,
-    siteUrl: `https://novela.narative.co`,
+    siteUrl: `https://master.dvvehp5krq3lv.amplifyapp.com`,
     description: `This is my description that will be used in the meta tags and important for search results`,
     hero: {
       heading: `Welcome to Novela, the simplest way to start publishing with Gatsby.`,
@@ -59,7 +59,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-118232427-3",
+        trackingId: "UA-XXXXXXX",
       },
     },
   ],
